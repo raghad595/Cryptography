@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptographic Toolkit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-mesh"></div>
+    
+    <main class="container">
+        <header>
+            <h1>Cryptographic Toolkit</h1>
+            <p>Seamlessly cipher and decipher using classic algorithms</p>
+        </header>
+
+        <div class="app-card">
+            <!-- Phase 1: Action Selection -->
+            <div class="section">
+                <div class="control-group">
+                    <label>1. Select Action</label>
+                    <div class="toggle-switch">
+                        <input type="radio" id="action-encrypt" name="action" value="encrypt" checked>
+                        <label for="action-encrypt">Encrypt</label>
+                        <input type="radio" id="action-decrypt" name="action" value="decrypt">
+                        <label for="action-decrypt">Decrypt</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Algorithm Selection -->
+            <div class="section">
+                <div class="control-group">
+                    <label for="cipher-select">2. Choose Algorithm</label>
+                    <select id="cipher-select">
+                        <option value="" disabled selected>Select an algorithm...</option>
+                        <option value="caesar">Caesar Cipher</option>
+                        <option value="monoalphabetic">Monoalphabetic Cipher</option>
+                        <option value="playfair">Playfair Cipher</option>
+                        <option value="vigenere">Vigenère Cipher</option>
+                        <option value="railfence">Rail-fence Cipher</option>
+                        <option value="rowtransposition">Row Transposition</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Phase 3: Inputs -->
+            <div class="section input-section" id="input-section" style="opacity: 0.5; pointer-events: none;">
+                <div class="control-group" id="key-container">
+                    <label id="key-label" for="cipher-key">3. Key</label>
+                    <input type="text" id="cipher-key" placeholder="Awaiting algorithm selection..." disabled>
+                    <div id="key-error" class="error-msg"></div>
+                </div>
+
+                <div class="control-group">
+                    <label id="input-label" for="input-text">4. Plaintext</label>
+                    <textarea id="input-text" rows="4" placeholder="Enter your text here..."></textarea>
+                </div>
+
+                <button id="execute-btn" class="primary-btn" disabled>Execute</button>
+            </div>
+
+            <!-- Phase 4: Output -->
+            <div class="section output-section">
+                <div class="control-group">
+                    <label id="output-label" for="output-text">Output</label>
+                    <textarea id="output-text" rows="4" readonly placeholder="Result will appear here..."></textarea>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
